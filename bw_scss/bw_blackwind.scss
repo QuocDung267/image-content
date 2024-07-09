@@ -1,0 +1,686 @@
+/* Var Blackwind CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import "responsive";
+:root {
+    blueColor--mainColor: #1F53F1;
+    --secondColor: #0F1E35;
+    --blackColor: #091020;
+    --whiteColor: #ffffff;
+    --blueColor: #1F53F1;
+    --greenColor: #118A77;
+    --redColor: #EB5757;
+    --yellowColor: #F2C94C;
+    --violetColor: #983ABD;
+    --ogranceColor: #ef8b2d;
+    --pinkColor: #FF44F8;
+    --borderColor: #E5E5E5;
+    --linerColor: linear-gradient(135deg, #1F53F1, #983ABD);
+    --grayColor: #E0E0E0;
+}
+
+$numberPading: 10px;
+$position: right left center;
+$pos: absolute relative unset fixed;
+$color: blue green black ogrance yellow red violet pink white gray;
+$display: block inline inline-block inline-flex none;
+@mixin BlackwindTransition($duration) {
+    transition: all $duration;
+}
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+@mixin BlackwindButton($colorBackground,
+$colorText,
+$colorBorder) {
+    @include BlackwindTransition(300ms);
+    padding: 7px 15px;
+    border-radius: 7px;
+    font-size: 18px;
+    @include desktop {
+        font-size: 16px;
+    }
+    @include tablet_mini() {
+        font-size: 14px;
+    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    color: $colorText;
+    border: 1px solid $colorBorder;
+    background: $colorBackground;
+}
+
+@mixin BlackwindInput($colorBackground,
+$colorText,
+$colorBorder) {
+    @include BlackwindTransition(300ms);
+    padding: 7px 15px;
+    border-radius: 7px;
+    font-size: 18px;
+    @include desktop {
+        font-size: 16px;
+    }
+    @include tablet_mini() {
+        font-size: 14px;
+    }
+    width: 100%;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    color: $colorText;
+    border: 1px solid $colorBorder;
+    background: $colorBackground;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    @include desktop {
+        font-size: 16px;
+    }
+    @include tablet_mini() {
+        font-size: 14px;
+    }
+    color: var(--blackColor);
+    overflow-x: hidden;
+}
+
+.bw_container {
+    max-width: 1450px;
+    padding-left: $numberPading;
+    padding-right: $numberPading;
+    margin: 0 auto;
+    width: 100%;
+    @include desktop {
+        max-width: 1150px;
+    }
+    @include tablet_mini() {
+        max-width: 100%;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+    @include desktopHD {
+        font-size: 58px;
+    }
+    @include desktop {
+        font-size: 42px;
+    }
+    @include tablet_mini() {
+        font-size: 36px;
+    }
+    @include tablet() {
+        font-size: 40px;
+    }
+    @include mobile() {
+        font-size: 40px;
+    }
+}
+
+h2 {
+    font-size: 54px;
+    font-weight: 700;
+    @include desktopHD {
+        font-size: 46px;
+    }
+    @include desktop {
+        font-size: 38px;
+    }
+    @include tablet_mini() {
+        font-size: 32px;
+    }
+    @include tablet() {
+        font-size: 26px;
+    }
+}
+
+h3 {
+    font-size: 48px;
+    font-weight: 700;
+    @include desktopHD {
+        font-size: 38px;
+    }
+    @include desktop {
+        font-size: 30px;
+    }
+    @include tablet_mini() {
+        font-size: 26px;
+    }
+    @include tablet() {
+        font-size: 22px;
+    }
+}
+
+h4 {
+    font-size: 38px;
+    font-weight: 700;
+    @include desktopHD {
+        font-size: 30px;
+    }
+    @include desktop {
+        font-size: 26px;
+    }
+    @include tablet_mini() {
+        font-size: 22px;
+    }
+    @include tablet() {
+        font-size: 18px;
+    }
+}
+
+h5 {
+    font-size: 30px;
+    font-weight: 700;
+    @include desktopHD {
+        font-size: 28px;
+    }
+    @include desktop {
+        font-size: 24px;
+    }
+    @include tablet_mini() {
+        font-size: 20px;
+    }
+    @include tablet() {
+        font-size: 17px;
+    }
+}
+
+h6 {
+    font-size: 24px;
+    font-weight: 700;
+    @include desktopHD {
+        font-size: 20px;
+    }
+    @include desktop {
+        font-size: 18px;
+    }
+    @include tablet_mini() {
+        font-size: 17px;
+    }
+    @include tablet() {
+        font-size: 16px;
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    @include desktopHD {
+        font-size: 16px;
+    }
+    @include desktop {
+        font-size: 15px;
+    }
+    @include tablet_mini() {
+        font-size: 14px;
+    }
+}
+
+a {
+    @include BlackwindTransition(300ms);
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.7;
+    @include desktopHD {
+        font-size: 16px;
+    }
+    @include desktop {
+        font-size: 15px;
+    }
+    @include tablet_mini() {
+        font-size: 14px;
+    }
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+        font-size: 16px;
+        line-height: 1.7;
+        @include desktopHD {
+            font-size: 16px;
+        }
+        @include desktop {
+            font-size: 15px;
+        }
+        @include tablet_mini() {
+            font-size: 14px;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+
+/** Row.Boostrap **/
+
+.bw_row {
+    margin-left: -$numberPading;
+    margin-right: -$numberPading;
+    @include flex;
+}
+
+
+/** Col.Boostrap **/
+
+@for $col from 1 through 12 {
+    $colWidth: percentage($col/12);
+    .bw_col_#{$col} {
+        max-width: $colWidth;
+        flex: 0 0 $colWidth;
+        padding-left: $numberPading;
+        padding-right: $numberPading;
+        @include tablet_mini {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+}
+
+@for $coln from 1 through 10 {
+    $colWidthCustom: $coln*10%;
+    .bw_c#{$coln} {
+        max-width: $colWidthCustom;
+        flex: 0 0 $colWidthCustom;
+        padding-left: $numberPading;
+        padding-right: $numberPading;
+        @include tablet_mini {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+}
+
+@for $max from 1 through 100 {
+    $maxWidth: $max*10px;
+    .bw_mw_#{$max} {
+        max-width: $maxWidth;
+    }
+}
+
+@for $width from 1 through 100 {
+    $widthMem: $width*10px;
+    .bw_w#{$width} {
+        width: $widthMem !important;
+    }
+}
+
+
+/** Margin and Padding **/
+
+@for $padding from 1 through 10 {
+    $paddingWidth: $padding*10px;
+    .bw_mt_#{$padding} {
+        margin-top: $paddingWidth;
+    }
+    .bw_mb_#{$padding} {
+        margin-bottom: $paddingWidth;
+    }
+    .bw_pt_#{$padding} {
+        padding-top: $paddingWidth;
+    }
+    .bw_pb_#{$padding} {
+        padding-bottom: $paddingWidth;
+    }
+}
+
+
+/** Flex display **/
+
+.bw_flex {
+    @include flex;
+}
+
+.bw_align_items_left {
+    align-items: flex-start;
+}
+
+.bw_align_items_center {
+    align-items: center;
+}
+
+.bw_align_items_right {
+    align-items: flex-end;
+}
+
+.bw_align_items_stretch {
+    align-items: stretch;
+}
+
+.bw_align_items_unset {
+    align-items: unset;
+}
+
+.bw_justify_content_left {
+    justify-content: flex-start;
+}
+
+.bw_justify_content_center {
+    justify-content: center;
+}
+
+.bw_justify_content_right {
+    justify-content: flex-end;
+}
+
+.bw_justify_content_between {
+    justify-content: space-between;
+}
+
+.bw_justify_content_around {
+    justify-content: space-around;
+}
+
+
+/** Text Align **/
+
+@each $namePos in $position {
+    .bw_text_#{$namePos} {
+        text-align: $namePos;
+    }
+}
+
+
+/** Position **/
+
+@each $namePosV in $pos {
+    .bw_p_#{$namePosV} {
+        position: $namePosV;
+    }
+}
+
+
+/** Display **/
+
+@each $displayName in $display {
+    .bw_d_#{$displayName} {
+        display: $displayName;
+    }
+}
+
+
+/** Button **/
+
+.bw_btn {
+    @include BlackwindButton(var(--grayColor),
+    var(--blackColor),
+    var(--grayColor));
+    &.bw_btn_primary {
+        @include BlackwindButton(var(--blueColor),
+        var(--whiteColor),
+        var(--blueColor));
+    }
+    &.bw_btn_danger {
+        @include BlackwindButton(var(--redColor),
+        var(--whiteColor),
+        var(--redColor));
+    }
+    &.bw_btn_success {
+        @include BlackwindButton(var(--greenColor),
+        var(--whiteColor),
+        var(--greenColor));
+    }
+    &.bw_btn_warning {
+        @include BlackwindButton(var(--ogranceColor),
+        var(--whiteColor),
+        var(--ogranceColor));
+    }
+    &.bw_btn_dark {
+        @include BlackwindButton(var(--blackColor),
+        var(--whiteColor),
+        var(--blackColor));
+    }
+}
+
+.bw_inp {
+    @include BlackwindInput(var(--whiteColor),
+    var(-blackColor),
+    var(--borderColor));
+    &.bw_inp_success {
+        @include BlackwindInput(var(--whiteColor),
+        var(--greenColor),
+        var(--greenColor));
+    }
+    &.bw_inp_danger {
+        @include BlackwindInput(var(--whiteColor),
+        var(--redColor),
+        var(--redColor));
+    }
+    &.bw_inp_warning {
+        @include BlackwindInput(var(--whiteColor),
+        var(--ogranceColor),
+        var(--ogranceColor));
+    }
+    &.bw_inp_primary {
+        @include BlackwindInput(var(--whiteColor),
+        var(--blueColor),
+        var(--blueColor));
+    }
+    &.bw_inp_dark {
+        @include BlackwindInput(var(--whiteColor),
+        var(--blackColor),
+        var(--blackColor));
+    }
+}
+
+.bw_pull_right {
+    order: 2;
+    @include tablet-mini {
+        order: unset;
+    }
+}
+
+.bw_pull_left {
+    order: 1;
+    @include tablet-mini {
+        order: unset;
+    }
+}
+
+.bw_relative {
+    position: relative;
+}
+
+.bw_absolute {
+    position: absolute;
+}
+
+.bw_sticky {
+    position: sticky;
+}
+
+.bw_radio,
+.bw_checkbox {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+    overflow: hidden;
+    span {
+        width: 20px;
+        height: 20px;
+        background: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+        border-radius: 50%;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include BlackwindTransition(300ms);
+        overflow: hidden;
+        position: relative;
+        &:not(.bw_radio span) {
+            border-radius: 0;
+        }
+    }
+    input {
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+        &:checked~span {
+            border: 1px solid var(--blueColor);
+            overflow: hidden;
+            &::after {
+                content: "";
+                background: var(--blueColor);
+                position: absolute;
+                left: 3px;
+                top: 3px;
+                right: 3px;
+                bottom: 3px;
+            }
+        }
+    }
+    &.bw_disable {
+        background: none;
+    }
+}
+
+.bw_pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    li {
+        padding: 0 20px;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--blackColor);
+        a {
+            color: var(--blackColor);
+            font-size: inherit;
+            font-weight: 700;
+        }
+        &:hover,
+        &.bw_active {
+            a {
+                color: var(--blueColor);
+            }
+        }
+    }
+}
+
+.bw_clickToDiv {
+    cursor: pointer;
+}
